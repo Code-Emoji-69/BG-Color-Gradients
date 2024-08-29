@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - 1</title>
+    <!-- <link rel="stylesheet" href="Color-Tab.css"> -->
+
+    <!-- for CSS CODE -->
+    <style>
+            body{
+        color: rgba(0,0,0,5);
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 2em;
+        top: 15%;
+        background: linear-gradient(to right, rgb(235, 149, 149),rgb(227, 227, 94)) ;
+        }
+
+        h1{
+            font-family: 600 3.5em, sans-serif;
+            text-align: center;
+            letter-spacing: 0.5em;
+            font-size: 40px;
+        }
+
+
+        h2{
+            font-family: 600 3.5em, sans-serif;
+            text-align: center;
+            letter-spacing: 0.5em;
+            margin: 5%;
+            font-size: 20px;
+        }
+
+
+        #ColorName1{
+            text-overflow:ellipsis;
+            white-space:nowrap;
+        }
+
+    </style>
+
+</head>
+<body id="Body">
+    
+    <h1>BackGround Generator</h1>
+    <p id="Col1"><input type="color" name="Color1" value="#00ff11" class="color-box1">
+        <span  id="ColorName1">#00ff11</span>
+    </p>
+    
+    <p id="Col2">  <input type="color" name="Color2" value="#C624A3" class="color-box2">
+        <span id="ColorName2">#C624A3</span>
+    </p>
+   
+    <h2>This is current color</h2>
+    <!-- <p>This content will be replaced if you use document.write after the page has loaded.</p> -->
+    
+    
+    
+    <!-- <script src="Color-Tab.js" defer></script> -->
+
+    <!-- JS Code -->
+    <script>
+
+        let  color1 = document.querySelector('.color-box1')
+        let  color2 = document.querySelector('.color-box2')
+        let CSS = document.querySelector('h1')
+        let Body = document.querySelector('#Body')
+        let Span1 = document.querySelector('#ColorName1')
+        let Span2 = document.querySelector('#ColorName1')
+
+
+
+        function colors(){
+            Body.style.background = "linear-gradient(to right," +color1.value+ ',' +color2.value+ ")";
+        }
+
+
+    //wE CREATE FUNCTION FOR REAPITING CODE AND PUT IT BELOW  "COLORS()"
+
+
+
+        color1.addEventListener('input',function(){
+            // Body.style.background = color1.value 
+            // or
+            colors();           // function Made
+            Span1.textContent = color1.value; // Use textContent for getting text
+        })
+        
+        color2.addEventListener('input',function(){
+            colors();           // function Made
+            Span2.textContent = color2.value; // Use textContent for getting text
+        })
+
+
+    </script>
+
+</body>
+</html>
+ 
